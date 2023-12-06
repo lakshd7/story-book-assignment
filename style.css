@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  background-color: #ffdbeb;
+}
+
+.admin-login-btn {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  background-color: #ff2c76;
+  border: 2px solid #ff2c76;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  width: 150px;
+  height: 45px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-login-btn:hover {
+  color: #ff2c76;
+  background-color: transparent;
+}
+
+.admin-login-btn:active {
+  background-color: #ff2c7621;
+}
+
+.login-popup-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+  z-index: 101;
+}
+
+.popup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  width: 650px;
+  border-radius: 5px;
+  background-color: white;
+  z-index: 101;
+}
+
+.popup .login-popup-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 23px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.popup h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 27px;
+  margin-bottom: 20px;
+  color: #ae1d50;
+}
+
+.popup input {
+  font-family: 'Poppins', sans-serif;
+  height: 45px;
+  padding-left: 15px;
+  background-color: rgb(244, 244, 244);
+  margin-bottom: 15px;
+  width: 300px;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.login-popup .login-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-color: #ff2c76;
+  border: 2px solid #ff2c76;
+  color: white;
+  width: 300px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 0.15s;
+}
+
+.login-popup button:hover {
+  background-color: transparent;
+  color: #ff2c76;
+}
+
+.login-popup .login-error {
+  position: absolute;
+  bottom: 40px;
+  left: 175px;
+  font-size: 15px;
+  color: #ff0000;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.login-popup-wrapper .overlay {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  background: rgba(0, 0, 0, 0.259);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 100;
+}
+
+.book-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-right: 70px;
+}
+
+.book {
+  position: relative;
+  width: 450px;
+  height: 600px;
+  transition: transform 0.5s;
+}
+
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  perspective: 1500px;
+}
+
+.front,
+.back {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: transform 1s;
+}
+
+.front {
+  z-index: 1;
+  backface-visibility: hidden;
+  border-left: 3px solid #ffdbeb;
+}
+
+.back {
+  z-index: 0;
+}
+
+.front-content,
+.back-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -20px;
+  padding: 40px;
+}
+
+.front-content h1,
+.back-content h1 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 35px;
+  text-align: center;
+}
+
+.front-content p,
+.back-content p {
+  position: absolute;
+  bottom: 10px;
+  font-size: 17px;
+}
+
+.back-content {
+  transform: rotateY(180deg);
+}
+
+.page-img {
+  height: 260px;
+  width: 260px;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+/* Paper Flipped Animation */
+.flipped .front,
+.flipped .back {
+  transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+.arrow-btn {
+  font-size: 45px;
+  background-color: transparent;
+  border: none;
+  transition: transform 0.55s;
+}
+
+.arrow-btn i {
+  color: #88737d;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.arrow-btn i:hover {
+  color: rgb(62, 62, 62);
+}
+
+.arrow-btn i:active {
+  transform: translateY(5px);
+  text-shadow: none;
+}
+
+.admin-btns-container {
+  position: absolute;
+  bottom: 140px;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.admin-btns-container button {
+  width: 150px;
+  height: 45px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: white;
+  border-radius: 100px;
+  transition: 0.2s;
+}
+
+.admin-btns-container .add-page-btn {
+  background-color: #5d5dff;
+  border: 2px solid #5d5dff;
+}
+
+.admin-btns-container .add-page-btn:hover {
+  background-color: transparent;
+  color: #5d5dff;
+}
+
+.admin-btns-container .remove-page-btn {
+  background-color: #ff4f4f;
+  border: 2px solid #ff4f4f;
+}
+
+.admin-btns-container .remove-page-btn:hover {
+  background-color: transparent;
+  color: #ff4f4f;
+}
+
+.add-page-popup input {
+  width: 450px;
+}
+
+.add-page-popup h1 {
+  color: #5d5dff;
+}
+
+.add-page-popup .add-page-popup-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 23px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.add-page-popup .add-page-popup-close-btn:hover {
+  color: #5d5dff;
+}
+
+.add-page-popup .add-page-popup-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-color: #5d5dff;
+  border: 2px solid #5d5dff;
+  color: white;
+  width: 450px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 0.15s;
+}
+
+.add-page-popup .add-page-popup-btn:hover {
+  background-color: transparent;
+  color: #5d5dff;
+}
+
+.remove-page-popup input {
+  width: 450px;
+}
+
+.remove-page-popup h1 {
+  color: #ff4f4f;
+}
+
+.remove-page-popup .remove-page-popup-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 23px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.remove-page-popup .remove-page-popup-close-btn:hover {
+  color: #ff4f4f;
+}
+
+.remove-page-popup .remove-page-popup-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-color: #ff4f4f;
+  border: 2px solid #ff4f4f;
+  color: white;
+  width: 450px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 0.15s;
+}
+
+.remove-page-popup .remove-page-popup-btn:hover {
+  background-color: transparent;
+  color: #ff4f4f;
+}

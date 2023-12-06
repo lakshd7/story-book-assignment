@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sleepy Tales</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="https://kit.fontawesome.com/d7c2afb0c6.js"></script>
+  <script defer src="./pages.js"></script>
+  <script defer src="./script.js"></script>
+</head>
+
+<body>
+  <button class="admin-login-btn">Admin Login</button>
+  <div class="login-popup-wrapper">
+    <div class="login-popup popup">
+      <button class="login-popup-close-btn">&#10006;</button>
+      <h1>Administrator/Author Login</h1>
+      <input type="text" class="username" placeholder="Username" onkeydown="keyDown(event)">
+      <input type="text" class="password" placeholder="Password" onkeydown="keyDown(event)">
+      <button class="login-btn">Login</button>
+      <div class="login-error">Username/Password is incorrect</div>
+    </div>
+    <div class="overlay"></div>
+  </div>
+
+  <div class="book-container">
+    <!-- Previous Button -->
+    <button class="arrow-btn prev-btn-container">
+      <i class="fas fa-arrow-circle-left prev-btn"></i>
+    </button>
+
+    <!-- Book -->
+    <div class="book">
+    </div>
+
+    <!-- Next Button -->
+    <button class="arrow-btn next-btn-container">
+      <i class="fas fa-arrow-circle-right next-btn"></i>
+    </button>
+
+  </div>
+
+  <!-- Admin Buttons -->
+  <div class="admin-btns-container">
+    <button class="add-page-btn">Add Page</button>
+    <button class="remove-page-btn">Remove Page</button>
+  </div>
+  <!-- Admin Popups -->
+  <div class="add-page-popup-wrapper login-popup-wrapper">
+    <div class="add-page-popup popup">
+      <button class="add-page-popup-close-btn">&#10006;</button>
+      <h1>Add Page</h1>
+      <input type="text" class="image-link" placeholder="Image link">
+      <input type="text" class="content" placeholder="Content">
+      <button class="add-page-popup-btn">Add Page</button>
+    </div>
+    <div class="overlay"></div>
+  </div>
+  <div class="remove-page-popup-wrapper login-popup-wrapper">
+    <div class="remove-page-popup popup">
+      <button class="remove-page-popup-close-btn">&#10006;</button>
+      <h1>Remove Page</h1>
+      <input type="text" class="image-link" placeholder="Enter page number to remove">
+      <button class="remove-page-popup-btn">Remove Page</button>
+    </div>
+    <div class="overlay"></div>
+  </div>
+</body>
+
+</html>
